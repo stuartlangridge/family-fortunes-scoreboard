@@ -15,8 +15,12 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
-#intro { display: none; }
-#round { display: block; }
+#intro {
+    background: url(ff.png) center center black;
+    background-size: contain;
+    text-indent: -1000em;
+}
+#round { display: none; }
 #round > * {
     position: absolute;
     /*border: 1px solid #333;*/
@@ -137,6 +141,13 @@ function buildScoreboard() {
     } catch(e) {
         console.log("bad local storage", data);
         return;
+    }
+    if (data.currentround === 0) {
+        document.getElementById("intro").style.display = "block";
+        document.getElementById("round").style.display = "none";
+    } else {
+        document.getElementById("intro").style.display = "none";
+        document.getElementById("round").style.display = "block";
     }
     document.getElementById("roundno").firstChild.nodeValue = data.currentround + "";
     document.getElementById("scoreleft").firstChild.nodeValue = data.scoreleft + "";
