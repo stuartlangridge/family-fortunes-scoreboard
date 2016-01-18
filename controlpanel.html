@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+<head>
+<meta charset=utf8>
+<title>Family Feud Control Panel</title>
+<style>
+html, body { margin: 0; padding: 0; }
+h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    font-size: 13px;
+    line-height: 15px;
+    background: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+#lcurrentround {
+    position: absolute;
+    top: 17px;
+    height: 22px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+#lcurrentteam {
+    position: absolute;
+    top: 47px;
+    height: 22px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+#scores {
+    position: absolute;
+    top: 82px;
+    height: 22px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+h2 {
+    background: #777;
+    color: yellow;
+    margin: 0 0 6px;
+    padding: 0;
+    font-size: 14px;
+}
+body > label {
+    display: block;
+}
+label input[type=number] {
+    width: 3em;
+}
+input.iq { width: 70%; }
+div.roundcont {
+    width: 47%;
+    margin-right: 2%;
+    float: left;
+    border: 1px solid #ddd;
+    border-width: 0 1px;
+    padding-left: 5px;
+}
+div.roundcont > label {
+    display: block;
+}
+#lcurrentteam, #lcurrentround, #scores {
+    text-align: center;
+    background: white;
+    padding: 0.5em 0;
+}
+#updatescoreboard {
+    display: block;
+    font-size: 2em;
+    margin: auto;
+}
+div.rounds {
+    margin-bottom: 30px;
+    margin-top: 127px;
+}
+div.roundcont {
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<h1>Family Feud Control Panel</h1>
+<label id="lcurrentround">Current round: <input 
+id="currentround" type="number" value="0"></label>
+<p id="lcurrentteam">Current team:
+    <label>
+    Left team
+    <input type="radio" name="currentteam" id="currentteamleft">
+    </label>
+    <label>
+    Right team
+    <input type="radio" name="currentteam" id="currentteamright">
+    </label>
+    <label>Answers they have got <em>wrong</em> (0-3)
+    <input type="number" id="wrongcount" value="0">
+    </label>
+</p>
+<p id="scores">
+    <label>Left team score: <input type="number" id="leftscore"></label>
+    <label>Right team score: <input type="number" id="rightscore"></label>
+</p>
+<div class="rounds">
+    <div class="roundcont first">
+        <h2>Round 1</h2>
+        <label id="lq1">Question 1: <input id="q1" class="iq"></label>
+        <label id="la11">Answer 1.1: 
+            <input id="a11" placeholder="answer">
+            <input id="s11" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v11">
+        </label>
+        <label id="la12">Answer 1.2: 
+            <input id="a12" placeholder="answer">
+            <input id="s12" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v12">
+        </label>
+        <label id="la13">Answer 1.3: 
+            <input id="a13" placeholder="answer">
+            <input id="s13" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v13">
+        </label>
+        <label id="la14">Answer 1.4: 
+            <input id="a14" placeholder="answer">
+            <input id="s14" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v14">
+        </label>
+        <label id="la15">Answer 1.5: 
+            <input id="a15" placeholder="answer">
+            <input id="s15" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v15">
+        </label>
+        <label id="la16">Answer 1.6: 
+            <input id="a16" placeholder="answer">
+            <input id="s16" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v16">
+        </label>
+        <label id="la17">Answer 1.7: 
+            <input id="a17" placeholder="answer">
+            <input id="s17" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v17">
+        </label>
+    </div>
+    <div class="roundcont">
+        <h2>Round 2</h2>
+        <label id="lq2">Question 2: <input id="q2" class="iq"></label>
+        <label id="la21">Answer 2.1: 
+            <input id="a21" placeholder="answer">
+            <input id="s21" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v21">
+        </label>
+        <label id="la22">Answer 2.2: 
+            <input id="a22" placeholder="answer">
+            <input id="s22" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v22">
+        </label>
+        <label id="la23">Answer 2.3: 
+            <input id="a23" placeholder="answer">
+            <input id="s23" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v23">
+        </label>
+        <label id="la24">Answer 2.4: 
+            <input id="a24" placeholder="answer">
+            <input id="s24" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v24">
+        </label>
+        <label id="la25">Answer 2.5: 
+            <input id="a25" placeholder="answer">
+            <input id="s25" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v25">
+        </label>
+        <label id="la26">Answer 2.6: 
+            <input id="a26" placeholder="answer">
+            <input id="s26" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v26">
+        </label>
+        <label id="la27">Answer 2.7: 
+            <input id="a27" placeholder="answer">
+            <input id="s27" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v27">
+        </label>
+    </div>
+    <div class="roundcont">
+        <h2>Round 3</h2>
+        <label id="lq3">Question 3: <input id="q3" class="iq"></label>
+        <label id="la31">Answer 3.1: 
+            <input id="a31" placeholder="answer">
+            <input id="s31" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v31">
+        </label>
+        <label id="la32">Answer 3.2: 
+            <input id="a32" placeholder="answer">
+            <input id="s32" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v32">
+        </label>
+        <label id="la33">Answer 3.3: 
+            <input id="a33" placeholder="answer">
+            <input id="s33" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v33">
+        </label>
+        <label id="la34">Answer 3.4: 
+            <input id="a34" placeholder="answer">
+            <input id="s34" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v34">
+        </label>
+        <label id="la35">Answer 3.5: 
+            <input id="a35" placeholder="answer">
+            <input id="s35" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v35">
+        </label>
+        <label id="la36">Answer 3.6: 
+            <input id="a36" placeholder="answer">
+            <input id="s36" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v36">
+        </label>
+        <label id="la37">Answer 3.7: 
+            <input id="a37" placeholder="answer">
+            <input id="s37" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v37">
+        </label>
+    </div>
+    <div class="roundcont last">
+        <h2>Round 4</h2>
+        <label id="lq4">Question 4: <input id="q4" class="iq"></label>
+        <label id="la41">Answer 4.1: 
+            <input id="a41" placeholder="answer">
+            <input id="s41" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v41">
+        </label>
+        <label id="la42">Answer 4.2: 
+            <input id="a42" placeholder="answer">
+            <input id="s42" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v42">
+        </label>
+        <label id="la43">Answer 4.3: 
+            <input id="a43" placeholder="answer">
+            <input id="s43" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v43">
+        </label>
+        <label id="la44">Answer 4.4: 
+            <input id="a44" placeholder="answer">
+            <input id="s44" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v44">
+        </label>
+        <label id="la45">Answer 4.5: 
+            <input id="a45" placeholder="answer">
+            <input id="s45" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v45">
+        </label>
+        <label id="la46">Answer 4.6: 
+            <input id="a46" placeholder="answer">
+            <input id="s46" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v46">
+        </label>
+        <label id="la47">Answer 4.7: 
+            <input id="a47" placeholder="answer">
+            <input id="s47" type="number" placeholder="score">
+            Display on scoreboard: <input type="checkbox" id="v47">
+        </label>
+    </div>
+</div>
+
+<button id="updatescoreboard">Update Scoreboard</button>
+<script>
+var scoreboard;
+function restoreFromSaved() {
+    var data = localStorage.getItem("ff-game-state");
+    if (!data) { console.log("null local storage"); return; }
+    try {
+        data = JSON.parse(data);
+    } catch(e) {
+        console.log("bad local storage", data);
+        return;
+    }
+    document.getElementById("currentround").value = data.currentround;
+    document.getElementById("leftscore").value = data.scoreleft;
+    document.getElementById("rightscore").value = data.scoreright;
+    document.getElementById("wrongcount").value = data.wrongcount;
+    if (data.currentteam == "left") {
+        document.getElementById("currentteamleft").checked = true;
+    } else if (data.currentteam == "right") {
+        document.getElementById("currentteamright").checked = true;
+    }
+    for (var r=1;r<=4;r++) {
+        document.getElementById("q" + r).value = data.rounds[r].q;
+        for (var a=1; a<=7; a++) {
+            document.getElementById("a" + r + a).value = data.rounds[r].a[a-1].text;
+            document.getElementById("s" + r + a).value = data.rounds[r].a[a-1].score;
+            document.getElementById("v" + r + a).checked = data.rounds[r].a[a-1].visible;
+        }   
+    }
+}
+function serialiseGameState() {
+    var gs = {
+        currentround: document.getElementById("currentround").valueAsNumber,
+        currentteam: document.getElementById("currentteamleft").checked ? "left" : "right",
+        wrongcount: document.getElementById("wrongcount").valueAsNumber,
+        scoreleft: document.getElementById("leftscore").valueAsNumber,
+        scoreright: document.getElementById("rightscore").valueAsNumber,
+        rounds: {}
+    };
+    for (var r=1;r<=4;r++) {
+        var thisround = {
+            q: document.getElementById("q" + r).value,
+            a: []
+        };
+        for (var a=1; a<=7; a++) {
+            if (document.getElementById("a" + r + a).value !== "") {
+                thisround.a.push({
+                    text: document.getElementById("a" + r + a).value,
+                    score: document.getElementById("s" + r + a).value,
+                    visible: document.getElementById("v" + r + a).checked
+                });
+            }
+        }
+        gs.rounds[r] = thisround;
+    }
+    return gs;
+}
+
+document.getElementById("updatescoreboard").addEventListener("click", function(e) {
+    if (!scoreboard) {
+        var strWindowFeatures = "menubar=no,location=no,resizable=yes,scrollbars=no,status=no";
+        scoreboard = window.open("scoreboard.html",
+            "Scoreboard_WindowName", strWindowFeatures);
+    }
+    localStorage.setItem("ff-game-state", JSON.stringify(serialiseGameState()));
+    scoreboard.postMessage("refresh", "*");
+}, false);
+
+// first time load: restore from saved state
+restoreFromSaved();
+</script>
+</body>
+</html>
