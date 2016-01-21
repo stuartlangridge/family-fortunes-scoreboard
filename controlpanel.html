@@ -273,6 +273,10 @@ id="currentround" type="number" value="0"></label>
 </div>
 
 <button id="updatescoreboard">Update Scoreboard</button>
+<button onclick="document.getElementById('correct').play()">Play 'correct' sound</button>
+<button onclick="document.getElementById('wrong').play()">Play 'wrong' sound</button>
+<audio id="correct" src="correct.ogg"></audio>
+<audio id="wrong" src="wrong.mp3"></audio>
 <script>
 var scoreboard;
 var DEFAULT_DATA = {
